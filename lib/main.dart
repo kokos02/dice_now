@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:flutter/services.dart';
 
 void main() {
+
+
+
   return runApp(MaterialApp(
     home: Scaffold(
       backgroundColor: Color(0xff1f6f8b),
@@ -20,11 +24,14 @@ void main() {
 class DiceNow extends StatefulWidget {
   @override
   _DiceNowState createState() => _DiceNowState();
+  //precacheImage("images/dice1.png", context);
 }
 
 class _DiceNowState extends State<DiceNow> {
-  int diceOne = 2;
-  int diceTwo = 5;
+  int diceOne = 6;
+  int diceTwo = 6;
+
+
 
   void RollDice() {
     setState(() {
@@ -35,6 +42,21 @@ class _DiceNowState extends State<DiceNow> {
 
   @override
   Widget build(BuildContext context) {
+
+    // Precaching images
+    precacheImage(AssetImage("images/dice1.png"), context);
+    precacheImage(AssetImage("images/dice2.png"), context);
+    precacheImage(AssetImage("images/dice3.png"), context);
+    precacheImage(AssetImage("images/dice4.png"), context);
+    precacheImage(AssetImage("images/dice5.png"), context);
+    //precacheImage(AssetImage("images/dice6.png"), context);
+    // /Precaching images
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return Container(
       child: Center(
         child: Column(
