@@ -24,7 +24,6 @@ void main() {
 class DiceNow extends StatefulWidget {
   @override
   _DiceNowState createState() => _DiceNowState();
-  //precacheImage("images/dice1.png", context);
 }
 
 class _DiceNowState extends State<DiceNow> {
